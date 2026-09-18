@@ -61,6 +61,7 @@ export const STYLISTS = [
 ];
 
 export const GALLERY = [
+  { src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnWv971N54E-gd4vlcegTyLEI07caYDDTrKL7k0fzxdWkTs84YLEmI1_VkmuRukK_BaeN_as9uw_cNVJJ7az9nVKDYYhWNB5VTL5h6420z24MyNpRYHpzuWcKUIjAuj747sCYdceA=w1200-h900-k-no", caption: "The #ONE Wall", captionKn: "ದಿ #ONE ಗೋಡೆ" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop", caption: "The Precision Cut", captionKn: "ನಿಖರ ಕಟ್", tall: true },
   { src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1200&auto=format&fit=crop", caption: "Colour in Motion", captionKn: "ಬಣ್ಣದ ಚಲನೆ" },
   { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200&auto=format&fit=crop", caption: "The Sanctuary Floor", captionKn: "ಸಲೂನ್ ಹಂತ", tall: true },
