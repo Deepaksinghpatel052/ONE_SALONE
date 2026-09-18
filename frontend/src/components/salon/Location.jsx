@@ -1,7 +1,9 @@
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
-import { SALON } from "@/lib/salonData";
+import { MapPin, Phone, Clock, Navigation, Store, Bath, CalendarCheck, CreditCard, Smartphone, Nfc, Baby } from "lucide-react";
+import { SALON, AMENITIES } from "@/lib/salonData";
 import { STR, useLang } from "@/lib/i18n";
 import { Reveal, Eyebrow } from "./Reveal";
+
+const AMENITY_ICONS = [Store, Bath, CalendarCheck, CreditCard, Smartphone, Nfc, Baby];
 
 export default function Location() {
   const { lang } = useLang();
@@ -45,6 +47,19 @@ export default function Location() {
               <a data-testid="location-directions-button" href={SALON.mapsUrl} target="_blank" rel="noreferrer" className="btn-ghost font-accent text-xs uppercase tracking-[0.25em] px-8 py-4 flex items-center gap-2">
                 <Navigation size={14} /> {t.directions}
               </a>
+            </div>
+            <div data-testid="amenities-strip" className="pt-6 border-t hairline">
+              <h3 className="font-accent text-[10px] uppercase tracking-[0.3em] text-gold">{lang === "kn" ? "ತಿಳಿದುಕೊಳ್ಳಿ" : "Good to Know"}</h3>
+              <div className="mt-4 flex flex-wrap gap-2.5">
+                {AMENITIES.map((a, i) => {
+                  const Icon = AMENITY_ICONS[i];
+                  return (
+                    <span key={a.en} data-testid={`amenity-${i}`} className="flex items-center gap-2 text-xs text-[#A19B91] border hairline px-3.5 py-2 hover:border-[rgba(197,160,89,0.4)] hover:text-[#E6D5B8] transition-colors duration-300">
+                      <Icon size={13} className="text-gold" /> {lang === "kn" ? a.kn : a.en}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           </Reveal>
           <Reveal delay={0.15}>

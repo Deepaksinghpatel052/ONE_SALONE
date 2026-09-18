@@ -15,6 +15,7 @@ const Stars = ({ n }) => (
 export default function Reviews() {
   const { lang } = useLang();
   const t = STR[lang].reviews;
+  const kn = lang === "kn";
   return (
     <section id="reviews" data-testid="google-reviews-section" className="py-28 bg-[#0d0d0f] border-y hairline">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[1fr_1.4fr] gap-14">
@@ -53,11 +54,11 @@ export default function Reviews() {
             <Reveal key={i} delay={i * 0.1}>
               <blockquote className="h-full bg-[#141417] border hairline p-7 hover:border-[rgba(197,160,89,0.4)] transition-colors duration-500">
                 <Quote size={18} className="text-gold mb-4" />
-                <p className="text-sm text-[#E6D5B8] leading-relaxed">"{r.text}"</p>
+                <p className="text-sm text-[#E6D5B8] leading-relaxed">"{kn ? r.textKn : r.text}"</p>
                 <footer className="mt-6 flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium">{r.name}</p>
-                    <p className="text-xs text-[#6E685F] mt-0.5">{r.meta}</p>
+                    <p className="text-sm font-medium">{kn && r.nameKn ? r.nameKn : r.name}</p>
+                    <p className="text-xs text-[#6E685F] mt-0.5">{kn ? r.metaKn : r.meta}</p>
                   </div>
                   <Stars n={r.stars} />
                 </footer>

@@ -74,26 +74,37 @@ export const REVIEWS = [
   {
     name: "Varsha Yadav",
     meta: "8 reviews on Google",
+    metaKn: "ಗೂಗಲ್‌ನಲ್ಲಿ 8 ವಿಮರ್ಶೆಗಳು",
     stars: 5,
     text: "I had my hair coloured at One Salon & Spa by Raju, and I had a wonderful experience. The atmosphere was relaxing, clean, and welcoming. Raju suggested a hair colour that perfectly suited me, and I absolutely loved the final result.",
+    textKn: "ಒನ್ ಸಲೂನ್ & ಸ್ಪಾದಲ್ಲಿ ರಾಜು ಅವರಿಂದ ಹೇರ್ ಕಲರ್ ಮಾಡಿಸಿದೆ — ಅದ್ಭುತ ಅನುಭವ. ವಾತಾವರಣ ಶಾಂತ, ಸ್ವಚ್ಛ ಮತ್ತು ಸ್ವಾಗತಾರ್ಹ. ರಾಜು ನನಗೆ ಸರಿಹೊಂದುವ ಬಣ್ಣ ಸಲಹೆ ಮಾಡಿದರು, ಫಲಿತಾಂಶ ನನಗೆ ತುಂಬಾ ಇಷ್ಟವಾಯಿತು.",
   },
   {
     name: "Verified Guest",
+    nameKn: "ಪರಿಶೀಲಿತ ಅತಿಥಿ",
     meta: "Google Review",
+    metaKn: "ಗೂಗಲ್ ವಿಮರ್ಶೆ",
     stars: 5,
     text: "Good experience, prices are reasonable, amazing service lastly kind staff.",
+    textKn: "ಒಳ್ಳೆಯ ಅನುಭವ, ಬೆಲೆ ಸೂಕ್ತ, ಅದ್ಭುತ ಸೇವೆ ಮತ್ತು ದಯಾಳು ಸಿಬ್ಬಂದಿ.",
   },
   {
     name: "Verified Guest",
+    nameKn: "ಪರಿಶೀಲಿತ ಅತಿಥಿ",
     meta: "Google Review",
+    metaKn: "ಗೂಗಲ್ ವಿಮರ್ಶೆ",
     stars: 5,
     text: "Excellent hair cut with minimal price, specially by Asif.",
+    textKn: "ಕಡಿಮೆ ಬೆಲೆಯಲ್ಲಿ ಅದ್ಭುತ ಹೇರ್ ಕಟ್ — ವಿಶೇಷವಾಗಿ ಆಸಿಫ್ ಅವರಿಂದ.",
   },
   {
     name: "Verified Guest",
+    nameKn: "ಪರಿಶೀಲಿತ ಅತಿಥಿ",
     meta: "Google Review",
+    metaKn: "ಗೂಗಲ್ ವಿಮರ್ಶೆ",
     stars: 5,
     text: "I would suggest people to come & experience yourself a best quality services.",
+    textKn: "ಎಲ್ಲರೂ ಬಂದು ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಸೇವೆಯನ್ನು ತಾವೇ ಅನುಭವಿಸಿ ಎಂದು ಸಲಹೆ ಮಾಡುತ್ತೇನೆ.",
   },
 ];
 
@@ -109,4 +120,14 @@ export const TIME_SLOTS = [
   "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
   "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM",
   "06:00 PM", "07:00 PM", "08:00 PM",
+];
+
+export const AMENITIES = [
+  { en: "On-site Services", kn: "ಸ್ಥಳದಲ್ಲೇ ಸೇವೆಗಳು" },
+  { en: "Restroom", kn: "ಶೌಚಾಲಯ ಸೌಲಭ್ಯ" },
+  { en: "Appointments Recommended", kn: "ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಶಿಫಾರಸು" },
+  { en: "Credit & Debit Cards", kn: "ಕ್ರೆಡಿಟ್ & ಡೆಬಿಟ್ ಕಾರ್ಡ್" },
+  { en: "Google Pay", kn: "ಗೂಗಲ್ ಪೇ" },
+  { en: "NFC Mobile Payments", kn: "NFC ಮೊಬೈಲ್ ಪಾವತಿ" },
+  { en: "Good for Kids", kn: "ಮಕ್ಕಳಿಗೆ ಸೂಕ್ತ" },
 ];
