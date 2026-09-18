@@ -1,0 +1,207 @@
+{
+  "project_info": {
+    "name": "#ONE SALON",
+    "tagline": "Basavanagudi's Premier Haute Coiffure & Beauty Sanctuary",
+    "location": "1, 3rd Cross, Model House St, Nagasandra Circle, Basavanagudi, Bengaluru, Karnataka 560004",
+    "phone": "+91 80 2950 2349",
+    "rating": "4.8",
+    "review_count": "1,612 Google Reviews",
+    "hours": "Mon - Sun: 8:00 AM - 9:00 PM",
+    "signature_stylists": [
+      {
+        "name": "Raju",
+        "specialty": "Signature Balayage & Colour Chemistry",
+        "role": "Master Colour Stylist"
+      },
+      {
+        "name": "Asif",
+        "specialty": "Architectural Precision Cuts & Styling",
+        "role": "Senior Hair Sculptor"
+      }
+    ]
+  },
+  "design_archetype": {
+    "name": "ARCHETYPE 5: LUXURY & EDITORIAL HAUTE COIFFURE",
+    "description": "A high-fashion, cinematic aesthetic blending obsidian dark surfaces, warm muted gold accents, rich textured noise overlays, and architectural serif typography. Designed to deliver an Awwwards-level SOTD experience.",
+    "vibe": "Exclusive, tactile, serene, highly sophisticated"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Cormorant Garamond, Playfair Display, serif",
+      "display_sans": "Syne, Cabinet Grotesk, sans-serif",
+      "body": "Satoshi, Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "google_fonts_link": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap",
+    "rules": [
+      "Headings MUST use Cormorant Garamond with tight tracking (`tracking-tight` or `tracking-tighter`).",
+      "Subheadings & accents MUST use Syne with wide uppercase tracking (`tracking-[0.25em] text-xs uppercase`).",
+      "Body text MUST use Inter or Satoshi with comfortable line height (`leading-relaxed text-neutral-300`).",
+      "DO NOT exceed max text size of `text-5xl lg:text-6xl` for main hero title.",
+      "Hero subtitle gap rule: Jump between hero title and subtitle must not exceed 2 Tailwind steps."
+    ]
+  },
+  "colors": {
+    "backgrounds": {
+      "primary": "#0A0A0B",
+      "card_surface": "#141417",
+      "card_hover": "#1A1A1E",
+      "glass_header": "rgba(10, 10, 11, 0.75)"
+    },
+    "accents": {
+      "bronze_gold": "#C5A059",
+      "bronze_gold_hover": "#D8B46E",
+      "gold_glow": "rgba(197, 160, 89, 0.25)",
+      "antique_champagne": "#E6D5B8"
+    },
+    "text": {
+      "primary": "#F9F8F6",
+      "secondary": "#A19B91",
+      "muted": "#6E685F",
+      "gold_accent": "#C5A059"
+    },
+    "borders": {
+      "subtle": "rgba(255, 255, 255, 0.08)",
+      "gold_subtle": "rgba(197, 160, 89, 0.25)",
+      "active": "rgba(197, 160, 89, 0.6)"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-black/75 border border-white/10 shadow-2xl",
+    "tracing_beam": "relative before:absolute before:inset-0 before:border before:border-transparent before:bg-[linear-gradient(90deg,transparent,#C5A059,transparent)] before:opacity-0 hover:before:opacity-100 transition-all duration-500",
+    "grain_overlay": "pointer-events-none fixed inset-0 opacity-[0.035] z-50 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]",
+    "soft_gold_glow": "drop-shadow-[0_0_20px_rgba(197,160,89,0.25)]"
+  },
+  "layouts_and_sections": [
+    {
+      "section_id": "header_nav",
+      "component": "FloatingNav",
+      "description": "Sticky dark crystal navbar with blur background, #ONE SALON metallic logo, quick section links, Google rating chip (4.8 ★), and instant CTA 'Book Appointment'.",
+      "test_ids": {
+        "nav_container": "salon-nav-bar",
+        "logo": "salon-nav-logo",
+        "book_btn": "salon-nav-book-button",
+        "phone_link": "salon-nav-phone-link"
+      }
+    },
+    {
+      "section_id": "hero",
+      "component": "KineticHero",
+      "description": "Dramatic full-height hero section with masked line-by-line reveal animation, high-resolution portrait video/image overlay, location pill ('Basavanagudi, Bengaluru'), 4.8★ Google Review badge, and primary booking CTA.",
+      "test_ids": {
+        "hero_title": "hero-headline",
+        "hero_book_cta": "hero-book-now-cta",
+        "hero_services_cta": "hero-explore-services-cta"
+      }
+    },
+    {
+      "section_id": "editorial_marquee",
+      "component": "EditorialMarquee",
+      "description": "Ultra-slow drifting gold ribbon displaying high-end signature offerings with subtle diamond bullet separators.",
+      "test_ids": {
+        "marquee_container": "editorial-marquee-strip"
+      }
+    },
+    {
+      "section_id": "manifesto",
+      "component": "ManifestoChapters",
+      "description": "Numbered editorial chapters (01, 02, 03) detailing #ONE SALON's philosophy, precision craftsmanship, and Basavanagudi heritage.",
+      "test_ids": {
+        "manifesto_container": "manifesto-section"
+      }
+    },
+    {
+      "section_id": "services",
+      "component": "ServicesShowcase",
+      "description": "Bento-style category grid for Hair Cuts, Master Colouring, Regenerative Spa & Massages, and Luxury Shaves. Includes filter tabs, prices in INR, estimated durations, and stylist tags (Raju / Asif).",
+      "test_ids": {
+        "services_grid": "services-showcase-grid",
+        "service_filter": "service-category-filter",
+        "service_card": "service-item-card"
+      }
+    },
+    {
+      "section_id": "stylists",
+      "component": "StylistsSpotlight",
+      "description": "High-impact spotlight profiles for Raju (Master Colourist) and Asif (Senior Hair Sculptor) with their signature techniques, experience, and direct booking links.",
+      "test_ids": {
+        "stylists_section": "stylists-spotlight-section",
+        "raju_card": "stylist-card-raju",
+        "asif_card": "stylist-card-asif"
+      }
+    },
+    {
+      "section_id": "gallery",
+      "component": "EditorialGallery",
+      "description": "Asymmetric editorial gallery showcasing cuts, colouring transformations, head spa rituals, and salon interior elegance.",
+      "test_ids": {
+        "gallery_grid": "editorial-gallery-grid"
+      }
+    },
+    {
+      "section_id": "reviews",
+      "component": "GoogleReviewsSection",
+      "description": "Interactive reviews widget showcasing actual Google reviews (4.8 rating across 1,612 reviews) with client quotes, star breakdown, and Google verification badge.",
+      "test_ids": {
+        "reviews_container": "google-reviews-section",
+        "rating_score": "google-rating-score"
+      }
+    },
+    {
+      "section_id": "booking",
+      "component": "AppointmentBookingForm",
+      "description": "Luxury multi-step appointment request form collecting client details (Name, Phone, Service, Preferred Stylist, Date, Time, Special Notes). Features live booking summary preview, instant confirmation modal, and direct WhatsApp / Call buttons.",
+      "test_ids": {
+        "booking_form": "appointment-booking-form",
+        "name_input": "booking-input-name",
+        "phone_input": "booking-input-phone",
+        "service_select": "booking-select-service",
+        "stylist_select": "booking-select-stylist",
+        "date_input": "booking-input-date",
+        "time_select": "booking-select-time",
+        "submit_btn": "booking-submit-button",
+        "confirmation_modal": "booking-confirmation-modal"
+      }
+    },
+    {
+      "section_id": "location",
+      "component": "LocationContactSection",
+      "description": "Comprehensive contact panel with interactive address map card, operating hours, direct phone quick-call, and directions button.",
+      "test_ids": {
+        "location_section": "location-contact-section",
+        "phone_button": "location-phone-button",
+        "directions_button": "location-directions-button"
+      }
+    },
+    {
+      "section_id": "footer",
+      "component": "LuxuryFooter",
+      "description": "Grand scale editorial footer featuring oversized #ONE SALON typography, quick links, address, operating hours, copyright, and smooth top scroll trigger.",
+      "test_ids": {
+        "footer_container": "salon-footer",
+        "back_to_top": "footer-back-to-top-button"
+      }
+    }
+  ],
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1675034743339-0b0747047727?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "salon_interior": "https://images.unsplash.com/photo-1560869713-7d0a29430803?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "hair_colouring_raju": "https://images.unsplash.com/photo-1560869713-bf165a9cfac1?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "hair_cut_asif": "https://images.unsplash.com/photo-1619367901998-73b3a70b3898?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "head_massage_spa": "https://images.pexels.com/photos/17553843/pexels-photo-17553843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "hair_wash_treatment": "https://images.pexels.com/photos/23349910/pexels-photo-23349910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "facial_spa": "https://images.unsplash.com/photo-1785852790570-0d2858068c70?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "styling_model_1": "https://images.unsplash.com/photo-1562259920-47afc3030ba2?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "styling_model_2": "https://images.unsplash.com/photo-1695527081848-1e46c06e6458?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Build a cohesive single-page luxury web app in React JS matching the Archetype 5 aesthetic for #ONE SALON.",
+    "Implement Lenis smooth scrolling or Framer Motion scroll-linked reveals for high-end feel.",
+    "Include kinetic title reveal animation in the hero section.",
+    "Ensure ALL interactive elements feature appropriate data-testid attributes.",
+    "Use Shadcn UI primitives for forms, select dropdowns, modals, and tabs.",
+    "Ensure contrast ratios are high (gold accent text on dark background strictly #C5A059, main body text #F9F8F6 or #A19B91).",
+    "Integrate the booking form with clear interactive feedback (toast notification via Sonner and a confirmation receipt dialog).",
+    "Feature real details: Google Rating 4.8 / 1612 reviews, Address in Basavanagudi, Phone +91 80 2950 2349, Stylists Raju & Asif."
+  ]
+}
