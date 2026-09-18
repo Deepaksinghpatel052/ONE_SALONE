@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 import { GALLERY } from "@/lib/salonData";
+import { STR, useLang } from "@/lib/i18n";
 import { Reveal, Eyebrow } from "./Reveal";
 
 export default function Gallery() {
+  const { lang } = useLang();
+  const t = STR[lang].gallery;
+  const kn = lang === "kn";
   return (
     <section id="gallery" className="max-w-7xl mx-auto px-6 lg:px-10 py-28">
       <Reveal>
-        <Eyebrow>The Gallery</Eyebrow>
+        <Eyebrow>{t.eyebrow}</Eyebrow>
         <h2 className="font-display text-4xl sm:text-5xl mt-4 leading-tight">
-          Moments from <span className="italic text-gold">the floor</span>
+          {t.titleA} <span className="italic text-gold">{t.titleB}</span>
         </h2>
       </Reveal>
       <div data-testid="editorial-gallery-grid" className="mt-14 columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:balance]">
@@ -28,7 +32,7 @@ export default function Gallery() {
               className={`w-full object-cover ${g.tall ? "aspect-[3/4]" : "aspect-[4/3]"} group-hover:scale-105 transition-transform duration-700 ease-out`}
             />
             <figcaption className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <span className="font-display italic text-lg text-[#E6D5B8]">{g.caption}</span>
+              <span className="font-display italic text-lg text-[#E6D5B8]">{kn ? g.captionKn : g.caption}</span>
             </figcaption>
           </motion.figure>
         ))}

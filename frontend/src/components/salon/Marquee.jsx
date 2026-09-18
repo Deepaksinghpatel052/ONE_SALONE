@@ -1,8 +1,9 @@
 import { Diamond } from "lucide-react";
-
-const ITEMS = ["Signature Cuts", "Master Colour", "Head Spa Rituals", "Hot-Towel Shaves", "Bridal Artistry", "Beard Sculpture"];
+import { STR, useLang } from "@/lib/i18n";
 
 export default function Marquee() {
+  const { lang } = useLang();
+  const ITEMS = STR[lang].marquee;
   const row = [...ITEMS, ...ITEMS];
   return (
     <div data-testid="editorial-marquee-strip" className="relative border-y hairline-gold py-5 overflow-hidden bg-[#0d0d0f]">

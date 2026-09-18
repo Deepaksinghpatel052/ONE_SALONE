@@ -1,15 +1,18 @@
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import { SALON } from "@/lib/salonData";
+import { STR, useLang } from "@/lib/i18n";
 import { Reveal, Eyebrow } from "./Reveal";
 
 export default function Location() {
+  const { lang } = useLang();
+  const t = STR[lang].visit;
   return (
     <section id="visit" data-testid="location-contact-section" className="bg-[#0d0d0f] border-t hairline py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
-          <Eyebrow>Visit Us</Eyebrow>
+          <Eyebrow>{t.eyebrow}</Eyebrow>
           <h2 className="font-display text-4xl sm:text-5xl mt-4 leading-tight">
-            In the heart of <span className="italic text-gold">Basavanagudi</span>
+            {t.titleA} <span className="italic text-gold">{t.titleB}</span>
           </h2>
         </Reveal>
         <div className="mt-14 grid lg:grid-cols-2 gap-6">
@@ -17,30 +20,30 @@ export default function Location() {
             <div className="flex gap-5">
               <MapPin className="text-gold shrink-0 mt-1" size={20} />
               <div>
-                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">Address</h3>
+                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">{t.address}</h3>
                 <p className="text-sm text-[#A19B91] leading-relaxed mt-2 max-w-sm">{SALON.address}</p>
               </div>
             </div>
             <div className="flex gap-5">
               <Clock className="text-gold shrink-0 mt-1" size={20} />
               <div>
-                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">Hours</h3>
-                <p className="text-sm text-[#A19B91] mt-2">{SALON.hours}</p>
+                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">{t.hours}</h3>
+                <p className="text-sm text-[#A19B91] mt-2">{lang === "kn" ? SALON.hoursKn : SALON.hours}</p>
               </div>
             </div>
             <div className="flex gap-5">
               <Phone className="text-gold shrink-0 mt-1" size={20} />
               <div>
-                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">Phone</h3>
+                <h3 className="font-accent text-xs uppercase tracking-[0.25em] text-[#E6D5B8]">{t.phone}</h3>
                 <p className="text-sm text-[#A19B91] mt-2">{SALON.phone}</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-4 pt-2">
               <a data-testid="location-phone-button" href={SALON.phoneHref} className="btn-gold font-accent text-xs uppercase tracking-[0.25em] px-8 py-4 flex items-center gap-2">
-                <Phone size={14} /> Call the Salon
+                <Phone size={14} /> {t.call}
               </a>
               <a data-testid="location-directions-button" href={SALON.mapsUrl} target="_blank" rel="noreferrer" className="btn-ghost font-accent text-xs uppercase tracking-[0.25em] px-8 py-4 flex items-center gap-2">
-                <Navigation size={14} /> Get Directions
+                <Navigation size={14} /> {t.directions}
               </a>
             </div>
           </Reveal>

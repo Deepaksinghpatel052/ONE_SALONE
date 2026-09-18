@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Star } from "lucide-react";
+import { Phone, Star, Languages } from "lucide-react";
 import { SALON } from "@/lib/salonData";
+import { STR, useLang } from "@/lib/i18n";
 
 const LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Artists", href: "#stylists" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Visit", href: "#visit" },
+  { key: "services", href: "#services" },
+  { key: "artists", href: "#stylists" },
+  { key: "gallery", href: "#gallery" },
+  { key: "reviews", href: "#reviews" },
+  { key: "visit", href: "#visit" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang } = useLang();
+  const t = STR[lang];
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -36,11 +39,18 @@ export default function Nav() {
         <nav className="hidden md:flex items-center gap-8">
           {LINKS.map((l) => (
             <a key={l.href} href={l.href} className="text-xs uppercase tracking-[0.2em] text-[#A19B91] hover:text-gold transition-colors duration-300">
-              {l.label}
+              {t.nav[l.key]}
             </a>
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <button
+            data-testid="lang-toggle"
+            onClick={() => setLang(lang === "en" ? "kn" : "en")}
+            className="flex items-center gap-1.5 text-xs border hairline-gold px-3 py-1.5 text-[#E6D5B8] hover:text-gold hover:border-[#C5A059] transition-colors duration-300"
+          >
+            <Languages size={12} /> {lang === "en" ? "ಕನ್ನಡ" : "EN"}
+          </button>
           <span className="hidden sm:flex items-center gap-1.5 text-xs border hairline-gold px-3 py-1.5 text-[#E6D5B8]">
             <Star size={12} className="fill-[#C5A059] text-gold" /> {SALON.rating}
           </span>
@@ -48,7 +58,7 @@ export default function Nav() {
             <Phone size={13} /> {SALON.phone}
           </a>
           <a data-testid="salon-nav-book-button" href="#booking" className="btn-gold font-accent text-xs uppercase tracking-[0.2em] px-5 py-2.5">
-            Book Now
+            {t.nav.book}
           </a>
         </div>
       </div>

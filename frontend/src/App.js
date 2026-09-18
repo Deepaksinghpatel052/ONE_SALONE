@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
+import { LangProvider } from "@/lib/i18n";
 import Nav from "@/components/salon/Nav";
 import Hero from "@/components/salon/Hero";
 import Marquee from "@/components/salon/Marquee";
@@ -42,22 +43,24 @@ function App() {
   }, []);
 
   return (
-    <div className="grain bg-[#0A0A0B] text-[#F9F8F6] min-h-screen">
-      <Toaster theme="dark" position="bottom-right" />
-      <Nav />
-      <main>
-        <Hero />
-        <Marquee />
-        <Manifesto />
-        <Services />
-        <Stylists />
-        <Gallery />
-        <Reviews />
-        <Booking />
-        <Location />
-      </main>
-      <Footer />
-    </div>
+    <LangProvider>
+      <div className="grain bg-[#0A0A0B] text-[#F9F8F6] min-h-screen">
+        <Toaster theme="dark" position="bottom-right" />
+        <Nav />
+        <main>
+          <Hero />
+          <Marquee />
+          <Manifesto />
+          <Services />
+          <Stylists />
+          <Gallery />
+          <Reviews />
+          <Booking />
+          <Location />
+        </main>
+        <Footer />
+      </div>
+    </LangProvider>
   );
 }
 

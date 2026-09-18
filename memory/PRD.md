@@ -33,10 +33,12 @@ Create a luxury web app for #ONE SALON, a beauty parlour in Basavanagudi, Bengal
 - Full booking flow in browser with confirmation modal
 - All sections render; hero animation, marquee, map embed confirmed via screenshots
 
+## Implemented (2026-09-18, iteration 2)
+- Full Kannada (ಕನ್ನಡ) language toggle in nav (EN ↔ ಕನ್ನಡ), persisted in localStorage; covers nav, hero, marquee, manifesto, services (names/descriptions/categories/durations), stylists, gallery captions, reviews chrome, booking form + confirmation modal, location, footer. Noto Sans/Serif Kannada fonts added. Verified: toggled to KN, booked an appointment in Kannada, confirmation modal in Kannada, toggled back to EN.
+
 ## Backlog
+- P1: Real salon photos — user to share Google Maps link for extraction (fallback: user uploads); swap into GALLERY/STYLISTS/hero in salonData.js
 - P1: WhatsApp booking notification to owner
 - P1: SMS/email confirmation to guest
 - P2: Admin dashboard for bookings with status management
-- P2: Before/after transformation gallery with real salon photos
 - P2: Online payment / advance deposit (Razorpay/Stripe)
-- P3: Multi-language (Kannada) toggle

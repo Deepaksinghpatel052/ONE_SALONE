@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, BadgeCheck, Quote } from "lucide-react";
 import { REVIEWS, RATING_BARS, SALON } from "@/lib/salonData";
+import { STR, useLang } from "@/lib/i18n";
 import { Reveal, Eyebrow } from "./Reveal";
 
 const Stars = ({ n }) => (
@@ -12,16 +13,18 @@ const Stars = ({ n }) => (
 );
 
 export default function Reviews() {
+  const { lang } = useLang();
+  const t = STR[lang].reviews;
   return (
     <section id="reviews" data-testid="google-reviews-section" className="py-28 bg-[#0d0d0f] border-y hairline">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[1fr_1.4fr] gap-14">
         <Reveal>
-          <Eyebrow>Verified on Google</Eyebrow>
+          <Eyebrow>{t.eyebrow}</Eyebrow>
           <div className="mt-6 flex items-end gap-4">
             <span data-testid="google-rating-score" className="font-display text-8xl leading-none text-gold">{SALON.rating}</span>
             <div className="pb-2">
               <Stars n={5} />
-              <p className="text-sm text-[#A19B91] mt-2">{SALON.reviewCount} reviews</p>
+              <p className="text-sm text-[#A19B91] mt-2">{SALON.reviewCount} {t.reviews}</p>
             </div>
           </div>
           <div className="mt-8 space-y-2.5 max-w-xs">
@@ -41,7 +44,7 @@ export default function Reviews() {
             ))}
           </div>
           <p className="mt-8 flex items-center gap-2 text-xs text-[#6E685F]">
-            <BadgeCheck size={14} className="text-gold" /> Ratings sourced from Google Maps
+            <BadgeCheck size={14} className="text-gold" /> {t.source}
           </p>
         </Reveal>
 

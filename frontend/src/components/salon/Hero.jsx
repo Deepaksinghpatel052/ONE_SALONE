@@ -2,10 +2,12 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Star, ArrowDown } from "lucide-react";
 import { SALON } from "@/lib/salonData";
-
-const LINES = ["The Art of", "Haute Coiffure"];
+import { STR, useLang } from "@/lib/i18n";
 
 export default function Hero() {
+  const { lang } = useLang();
+  const t = STR[lang].hero;
+  const LINES = [t.line1, t.line2];
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -32,10 +34,10 @@ export default function Hero() {
           className="flex flex-wrap items-center gap-3 mb-8"
         >
           <span className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#E6D5B8] border hairline-gold px-4 py-2 backdrop-blur-sm bg-black/30">
-            <MapPin size={12} className="text-gold" /> {SALON.area}
+            <MapPin size={12} className="text-gold" /> {lang === "kn" ? SALON.areaKn : SALON.area}
           </span>
           <span className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#E6D5B8] border hairline-gold px-4 py-2 backdrop-blur-sm bg-black/30">
-            <Star size={12} className="fill-[#C5A059] text-gold" /> {SALON.rating} · {SALON.reviewCount} Google Reviews
+            <Star size={12} className="fill-[#C5A059] text-gold" /> {SALON.rating} · {SALON.reviewCount} {t.pillReviews}
           </span>
         </motion.div>
 
@@ -60,8 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.3 }}
           className="mt-6 max-w-xl text-[#A19B91] leading-relaxed text-base"
         >
-          Basavanagudi's most-reviewed beauty sanctuary. Precision cuts, couture colour and
-          slow spa rituals — crafted one guest at a time since day one.
+          {t.sub}
         </motion.p>
 
         <motion.div
@@ -71,10 +72,10 @@ export default function Hero() {
           className="mt-10 flex flex-wrap gap-4"
         >
           <a data-testid="hero-book-now-cta" href="#booking" className="btn-gold font-accent text-xs uppercase tracking-[0.25em] px-8 py-4">
-            Reserve Your Chair
+            {t.book}
           </a>
           <a data-testid="hero-explore-services-cta" href="#services" className="btn-ghost font-accent text-xs uppercase tracking-[0.25em] px-8 py-4">
-            Explore Services
+            {t.explore}
           </a>
         </motion.div>
       </motion.div>
@@ -85,7 +86,7 @@ export default function Hero() {
         transition={{ delay: 2 }}
         className="absolute bottom-8 right-8 z-10 hidden md:flex flex-col items-center gap-2 text-[#6E685F]"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] [writing-mode:vertical-lr]">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] [writing-mode:vertical-lr]">{t.scroll}</span>
         <motion.span animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
           <ArrowDown size={14} />
         </motion.span>
