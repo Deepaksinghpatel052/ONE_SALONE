@@ -1,0 +1,9 @@
+# Runtime-only dependencies for the Docker image (server.py).
+# requirements.txt also lists dev tools and Emergent-only packages
+# (e.g. emergentintegrations) that are not on public PyPI.
+fastapi==0.110.1
+uvicorn[standard]==0.25.0
+motor==3.3.1
+pymongo==4.6.3
+pydantic>=2.6.4
+python-dotenv>=1.0.1

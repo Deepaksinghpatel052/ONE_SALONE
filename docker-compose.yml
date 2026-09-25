@@ -1,0 +1,46 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      # Localhost only, for DB tools like MongoDB Compass
+      - "127.0.0.1:${MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+      DB_NAME: ${DB_NAME:-onesalon}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      ADMIN_KEY: ${ADMIN_KEY:?Set ADMIN_KEY in .env}
+      PORT: ${BACKEND_PORT:-8001}
+    ports:
+      # Direct API access from this machine (the site itself uses /api via nginx)
+      - "127.0.0.1:${BACKEND_PORT:-8001}:${BACKEND_PORT:-8001}"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL:-}
+    restart: unless-stopped
+    environment:
+      BACKEND_PORT: ${BACKEND_PORT:-8001}
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
