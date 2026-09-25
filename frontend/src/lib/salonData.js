@@ -1,19 +1,5 @@
-export const SALON = {
-  name: "#ONE SALON",
-  tagline: "Haute Coiffure & Beauty Sanctuary",
-  taglineKn: "ಹೌಟ್ ಕಾಫಿಯರ್ & ಬ್ಯೂಟಿ ಸ್ಯಾಂಕ್ಚುರಿ",
-  area: "Basavanagudi, Bengaluru",
-  areaKn: "ಬಸವನಗುಡಿ, ಬೆಂಗಳೂರು",
-  address: "1, 3rd Cross, Model House St, Nagasandra Circle, Basavanagudi, Bengaluru, Karnataka 560004",
-  phone: "+91 80 2950 2349",
-  phoneHref: "tel:+918029502349",
-  rating: "4.8",
-  reviewCount: "1,612",
-  hours: "Mon — Sun · 8:00 AM — 9:00 PM",
-  hoursKn: "ಸೋಮ — ಭಾನು · ಬೆಳಿಗ್ಗೆ 8:00 — ರಾತ್ರಿ 9:00",
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=ONE+SALON+Nagasandra+Circle+Basavanagudi+Bengaluru",
-};
+// Salon identity & contact details live in src/config/site.js
+export { SALON } from "@/config/site";
 
 export const SERVICES = [
   { id: 1, name: "Signature Hair Cut & Styling", nameKn: "ಸಿಗ್ನೇಚರ್ ಹೇರ್ ಕಟ್ & ಸ್ಟೈಲಿಂಗ್", cat: "Hair", price: "₹399", duration: "45 min", durationKn: "45 ನಿಮಿಷ", stylist: "Asif", desc: "Consultation, precision scissor work, wash & finish styling.", descKn: "ಸಮಾಲೋಚನೆ, ನಿಖರ ಕತ್ತರಿಸುವಿಕೆ, ಹೇರ್ ವಾಷ್ & ಸ್ಟೈಲಿಂಗ್." },

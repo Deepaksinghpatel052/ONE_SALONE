@@ -37,12 +37,14 @@ A cinematic, bilingual (English / ಕನ್ನಡ) single-page web experience fo
 ├── backend/
 │   ├── server.py            # FastAPI app — /api routes, booking model
 │   ├── requirements.txt     # Python dependencies
-│   └── .env                 # MONGO_URL, DB_NAME, CORS_ORIGINS, ADMIN_KEY
+│   └── .env.example         # Template for .env: MONGO_URL, DB_NAME, CORS_ORIGINS, ADMIN_KEY
 ├── frontend/
 │   ├── public/index.html    # Page shell (title, meta)
 │   ├── src/
 │   │   ├── App.js           # Lenis setup + section composition + LangProvider
 │   │   ├── index.css        # Fonts, design tokens, grain, marquee, inputs
+│   │   ├── config/
+│   │   │   └── site.js      # Salon name, address, phone, hours, map links, API URL
 │   │   ├── lib/
 │   │   │   ├── salonData.js # ALL content: services, stylists, gallery, reviews, amenities
 │   │   │   └── i18n.jsx     # Language context + EN/KN string dictionary
@@ -58,6 +60,7 @@ A cinematic, bilingual (English / ಕನ್ನಡ) single-page web experience fo
 │   │       ├── Booking.jsx  # Form + summary + confirmation modal
 │   │       ├── Location.jsx # Address, hours, amenities, map
 │   │       └── Footer.jsx
+│   ├── .env.example         # Template for .env: REACT_APP_BACKEND_URL, ...
 │   └── package.json
 ├── memory/
 │   ├── PRD.md               # Product requirements & backlog
@@ -76,10 +79,17 @@ Base URL: `{REACT_APP_BACKEND_URL}/api`
 | POST | `/bookings` | — | Create booking. Body: `name, phone, service, stylist, date, time, notes` |
 | GET | `/bookings?key=…` | Owner key | List all bookings (newest first) |
 
-**Owner bookings link:** `https://<your-domain>/api/bookings?key=onesalon-owner-2026`
+**Owner bookings link:** `https://<your-domain>/api/bookings?key=<ADMIN_KEY>`
 (Change `ADMIN_KEY` in `backend/.env` to rotate.)
 
 ## Environment Variables
+
+`.env` files are git-ignored. Copy each `.env.example` to `.env` and fill in real values:
+
+```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
 
 `backend/.env`
 ```
@@ -107,6 +117,7 @@ cd frontend && yarn install && yarn start
 
 ## Editing Content
 
+- **Salon name, address, phone, hours, map links:** `frontend/src/config/site.js`
 - **Services, prices, gallery, reviews, amenities:** `frontend/src/lib/salonData.js` (each entry has `nameKn`/`descKn` Kannada fields)
 - **UI text (both languages):** `frontend/src/lib/i18n.jsx` → `STR.en` / `STR.kn`
 - **Colors, fonts, buttons:** `frontend/src/index.css` (`:root` tokens)

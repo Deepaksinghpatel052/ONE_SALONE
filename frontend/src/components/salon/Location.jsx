@@ -66,7 +66,7 @@ export default function Location() {
             <div className="border hairline-gold overflow-hidden h-[340px] lg:h-full min-h-[340px] gold-glow">
               <iframe
                 title="#ONE SALON on Google Maps"
-                src="https://maps.google.com/maps?q=ONE%20SALON%20Nagasandra%20Circle%20Basavanagudi%20Bengaluru&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src={SALON.mapEmbedUrl}
                 className="w-full h-full grayscale invert-[0.9] contrast-[0.9]"
                 loading="lazy"
               />

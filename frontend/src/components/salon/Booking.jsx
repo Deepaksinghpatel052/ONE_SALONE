@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { Check, Phone, Loader2 } from "lucide-react";
 import { SERVICES, STYLISTS, TIME_SLOTS, SALON } from "@/lib/salonData";
+import { API_URL } from "@/config/site";
 import { STR, useLang } from "@/lib/i18n";
 import { Reveal, Eyebrow } from "./Reveal";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = API_URL;
 const today = () => new Date().toISOString().split("T")[0];
 
 const EMPTY = { name: "", phone: "", service: SERVICES[0].name, stylist: "Any Artist", date: today(), time: "10:00 AM", notes: "" };

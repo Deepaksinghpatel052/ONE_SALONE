@@ -26,7 +26,7 @@ Create a luxury web app for #ONE SALON, a beauty parlour in Basavanagudi, Bengal
 ## Implemented (2026-09-18)
 - Full single-page luxury site: Nav, Kinetic Hero, Marquee, Manifesto, Services (filterable), Stylists, Gallery, Reviews, Booking, Location (live map), Footer
 - Booking flow end-to-end: form → API → MongoDB → confirmation modal with reference + toast
-- Owner bookings endpoint protected by ADMIN_KEY (`onesalon-owner-2026`)
+- Owner bookings endpoint protected by ADMIN_KEY (set in backend/.env)
 
 ## Verified
 - POST /api/bookings (valid + invalid key rejection on GET)
